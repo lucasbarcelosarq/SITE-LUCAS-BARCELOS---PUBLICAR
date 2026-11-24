@@ -592,3 +592,5 @@ body{font-size:1.04rem}
 }
 /* Detalhes das obras: fotos menores no computador */
 @media(min-width:761px){.trilho .ob{flex:0 0 clamp(180px,15vw,260px)!important;max-width:260px}}
+/* Destaques: a foto inteira cabe na tela */
+@media(min-width:761px){.dest figure.full img{aspect-ratio:2.05!important;max-height:90vh}.dest figure.ar10 img{object-position:50% 45%}.dest figure.v05 img{object-position:50% 25%}}
