@@ -590,3 +590,5 @@ body{font-size:1.04rem}
 .grade .comp:first-child .momentos{grid-column:2;grid-row:2}
 .grade .comp:first-child>a{grid-column:2;grid-row:3;justify-self:start}
 }
+/* Detalhes das obras: fotos menores no computador */
+@media(min-width:761px){.trilho .ob{flex:0 0 clamp(180px,15vw,260px)!important;max-width:260px}}
