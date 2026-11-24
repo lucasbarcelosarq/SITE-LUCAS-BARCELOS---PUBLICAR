@@ -1,6 +1,6 @@
 /* Estrutura em preto, branco e cinza frio; a cor vem apenas dos projetos. */
 :root{--tinta:#111214;--papel:#f7f8f9;--cinza:#5b6068;--linha:#d3d6da;--claro:#c3c7cd;
---titulo:"Archivo","Arial",sans-serif;--texto:"Poppins","Segoe UI",sans-serif;--g:max(20px,5vw)}
+--titulo:"Jost","Arial",sans-serif;--texto:"Jost","Segoe UI",sans-serif;--g:max(20px,5vw)}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{background:var(--papel);color:var(--tinta);font:400 16px/1.65 var(--texto)}
@@ -240,7 +240,7 @@ footer.faixa.rodape{align-items:start;padding-bottom:104px}
 .ob-cab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 64px;align-items:end;margin-bottom:36px}
 .ob-cab h2{font-size:clamp(2.2rem,5.6vw,5rem);letter-spacing:-.025em}
 .ob-cab p{color:var(--claro);max-width:48ch}
-.tres{cursor:ew-resize;touch-action:pan-y;--t:0%;--p:55%;position:relative;overflow:hidden;background:#111214;aspect-ratio:1600/1056;max-height:86vh;width:100%}
+.tres{cursor:ew-resize;touch-action:pan-y;--t:0%;--p:25%;position:relative;overflow:hidden;background:#111214;aspect-ratio:1600/1056;max-height:86vh;width:100%}
 .tres img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
 .cam-p{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
 .cam-t{clip-path:inset(0 calc(100% - var(--t)) 0 0)}
@@ -353,7 +353,7 @@ footer.faixa.rodape{align-items:start;padding-bottom:104px}
 .pav h3{margin-bottom:16px}
 
 /* Obras: grade única */
-#obras .faixa>*{max-width:1180px;margin-inline:auto}
+#obras .faixa>*{max-width:none;margin-inline:0}
 #obras .ob-cab{align-items:end;margin-bottom:48px}
 #obras .ob-cab h2{font-size:clamp(1.9rem,3.4vw,2.9rem);letter-spacing:-.015em}
 .grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px 40px}
@@ -474,3 +474,119 @@ form input:focus,form select:focus,form textarea:focus{border-color:#fff}
 
 @media(max-width:760px){.dest{grid-template-columns:minmax(0,1fr);gap:56px}.dest figure.full,.dest figure.sq,.dest figure.wd{grid-column:auto}}
 @media(min-width:761px){.dest{column-gap:clamp(16px,2.4vw,40px)}}
+@media(max-width:700px){.faixa.manifesto{padding-block:88px;display:grid;justify-items:center;gap:36px}.manifesto::before,.manifesto::after{content:"";width:1px;height:44px;background:var(--cinza)}.manifesto p{margin:0;max-width:20em;text-align:center;font-size:1.5rem;line-height:1.36;letter-spacing:-.02em;text-wrap:balance}}
+@media(max-width:700px){
+footer.faixa.rodape{display:flex;flex-direction:column;align-items:center;gap:0;text-align:center;padding-block:64px 112px!important}
+.rodape>div:first-child{display:contents}
+.rodape img{display:none}
+.rodape p{margin:0}
+.rodape nav{order:2;width:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:0 17px;margin-top:32px;font-size:.86rem;padding-block:18px;border-block:1px solid #34373d}
+.rodape .cont{order:3;display:flex;flex-direction:column;align-items:center;margin-top:24px}
+.rodape a{display:inline-flex;align-items:center;min-height:44px;padding:0}
+.rodape .dir{order:4;margin-top:32px;font-size:.78rem;max-width:24em}
+}
+
+/* ===== Padrão de textos: uma escala única para o site todo ===== */
+:root{--t-secao:clamp(2rem,4vw,3.6rem);--t-frase:clamp(1.5rem,3.2vw,2.9rem);--t-item:1.25rem;--t-destaque:clamp(1.125rem,1.4vw,1.25rem);--t-corpo:1rem;--t-apoio:.875rem}
+h2,.ob-cab h2,.contato-g h2,.fecho h2{font-size:var(--t-secao)!important;font-weight:300!important;letter-spacing:-.03em!important;line-height:1.1!important}
+h3,h4,summary,.cartao,.portas strong,.vizinhos a,.dest figcaption h3,.lista h3,.obra .t{font-weight:400!important;letter-spacing:-.01em!important;line-height:1.3!important}
+h3,h4,.duvidas summary,.dest figcaption h3,.obra .t,.ob-sub,.fase>h3{font-size:var(--t-item)!important}
+.portas strong{font-size:clamp(1.5rem,2.2vw,2.1rem)!important;font-weight:300!important}
+.lista h3,.fase h4,.vizinhos a{font-size:1.125rem!important}
+.manifesto p{font-size:var(--t-frase)!important;letter-spacing:-.02em;line-height:1.28}
+.lead,.texto{font-size:var(--t-destaque)!important;font-weight:300!important;line-height:1.65!important;letter-spacing:0!important}
+
+.servicos p,.fase p,.obra p,.duvidas p,.sobre p:not(.lead),dd{font-size:var(--t-corpo)!important;font-weight:300;line-height:1.7}
+.dest figcaption p,.lista p,.nota,.nota a,.conta,figcaption,.obra a,.portas span,dt,label,.legenda,.legenda button,.momentos button,.rodape p,.rodape a{font-size:var(--t-apoio)!important}
+.portas span strong{display:block}
+.topo nav a,.btn,.mais,.filtros button,.abas button,.menu,.zap,form .btn,#lupa button{font-size:.9375rem!important;font-weight:400!important}
+.curriculo{display:grid;margin:20px 0 0;border-top:1px solid #34373d}
+.sobre .curriculo div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px 24px;max-width:none;padding:20px 0;border-bottom:1px solid #34373d}
+.curriculo dt{color:var(--claro);line-height:1.95}
+.curriculo dd{margin:0;grid-column:2;color:#fff;font-weight:400}
+.curriculo span{display:block;color:var(--claro);font-size:var(--t-apoio);font-weight:300;line-height:1.6}
+@media(max-width:700px){.sobre .curriculo div{grid-template-columns:minmax(0,1fr);gap:8px}.curriculo dd{grid-column:1}.lista h3{font-size:1rem!important}.topo nav a{font-size:1.125rem!important}}
+@media(max-width:700px){.rodape nav{gap:0;justify-content:space-between}.rodape nav a{font-size:.8125rem!important}}
+
+figure.full.v05 img{aspect-ratio:16/9}
+
+/* Serifada nos títulos grandes */
+:root{--serifa:"Jost",Arial,sans-serif;--t-secao:clamp(2.4rem,4.6vw,4.2rem);--t-frase:clamp(1.75rem,3.6vw,3.3rem)}
+h1,h2,.hero .hero-t h1,.ficha h1,.ob-cab h2,.contato-g h2,.fecho h2,.manifesto p{font-family:var(--serifa)!important;font-weight:400!important;font-stretch:100%!important;letter-spacing:-.015em!important}
+h2,#obras .ob-cab h2,.fecho h2{font-weight:500!important}
+.hero .hero-t h1{font-size:clamp(2.9rem,6.2vw,6.4rem);line-height:.98;max-width:12ch}
+.ficha h1{font-size:clamp(2.8rem,6vw,5.8rem)}
+.manifesto p{line-height:1.2!important}
+.so{max-width:980px;margin:40px auto 0}.so h3{display:none}
+@media(max-width:700px){.manifesto p{font-size:1.75rem!important;line-height:1.28!important}}
+/* Três fotos na mesma linha e altura: vertical, horizontal, vertical */
+.trio{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:clamp(12px,1.4vw,22px)}
+.galeria.pares .trio .ampliar{flex:1 1 0;min-width:0;width:auto!important}
+.galeria.pares .trio .ampliar:has(img:not(.quad)){flex-grow:1.7778}
+.trio .ampliar img{width:100%;height:auto;aspect-ratio:4/3;display:block}
+.trio .ampliar img.quad{aspect-ratio:3/4}
+@media(max-width:700px){.galeria.pares .trio .ampliar:has(img:not(.quad)){order:-1;flex:1 1 100%}.galeria.pares .trio .ampliar{flex:1 1 40%}}
+
+/* Fonte única do site: Jost (geométrica, traço de prancha) */
+:root{--t-secao:clamp(2rem,3.8vw,3.5rem);--t-frase:clamp(1.5rem,3vw,2.8rem)}
+h1,h2,.hero .hero-t h1,.ficha h1,.ob-cab h2,.contato-g h2,.fecho h2,.manifesto p,h2.g-tit{font-weight:300!important;letter-spacing:-.02em!important;line-height:1.1!important}
+body{font-size:1.04rem}
+.hero .hero-t h1{font-size:clamp(2.4rem,5vw,5.2rem);max-width:13ch}
+.ficha h1{font-size:clamp(2.3rem,4.8vw,4.7rem)}
+.manifesto p{line-height:1.28!important}
+@media(max-width:700px){.manifesto p{font-size:1.45rem!important;line-height:1.4!important}}
+.topo nav a,.btn{letter-spacing:.02em}
+/* Respiro em volta das três fotos */
+.trio{margin-top:clamp(16px,2vw,28px);gap:clamp(18px,2.4vw,36px)}
+.galeria:has(.trio){padding-bottom:clamp(72px,9vw,140px)}
+/* Obras: mesma grade, mesma altura de imagem, legendas e links na mesma linha */
+.obra{container-type:inline-size}
+#obras .grade,#obras .ob-cab,#obras .ob-gal{max-width:none;width:100%;margin-inline:0}
+#obras .grade{gap:clamp(56px,6vw,96px) clamp(28px,3vw,48px)}
+.grade .obra .tres{aspect-ratio:auto;height:73cqw}
+.grade .duo .ob-ver{aspect-ratio:auto;height:73cqw}
+.obra>.t{margin:0}.obra>p{margin:6px 0 20px!important}
+.grade .obra .momentos{height:48px;flex-wrap:nowrap;align-items:center}
+.grade .obra .momentos button{height:48px;min-height:0;padding:0;white-space:nowrap}
+.grade .obra .ob figcaption{height:48px;padding:0;align-items:center}
+.grade .obra>a{padding:6px 0}
+@media(min-width:761px) and (max-width:1150px){.obra>p{min-height:3.4em}}
+/* Obras: três comparadores em cima, dois pares embaixo */
+@media(min-width:1001px){#obras .grade{grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(56px,6vw,96px) clamp(24px,2.4vw,40px)}#obras .grade .comp{grid-column:span 2}#obras .grade .obra:not(.comp){grid-column:span 3}}
+@media(min-width:761px) and (max-width:1000px){#obras .grade .comp:nth-child(3){grid-column:1/-1}}
+
+/* Obras enxuta: um comparador grande, dois menores e fotos rolando para o lado */
+#obras .grade{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+#obras .grade .comp{grid-column:auto!important}
+#obras .grade .comp:first-child{grid-column:1/-1!important}
+.grade .comp:first-child .tres{height:min(54cqw,78vh)}
+#obras .obra>.t{margin-bottom:18px}
+.ob-barra{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:clamp(64px,7vw,110px) 0 24px!important}
+#obras .ob-barra .ob-sub{margin:0}
+.setas{display:flex;gap:10px}
+.setas button{width:48px;height:48px;border:1px solid #ffffff66;background:none;color:#fff;font:400 1.1rem var(--texto);cursor:pointer;transition:.3s}
+.setas button:hover{background:#fff;color:#0d0e10}
+.setas button:disabled{opacity:.3;cursor:default;background:none;color:#fff}
+#obras .trilho{display:flex;gap:clamp(12px,1.4vw,22px);overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:var(--g);scrollbar-width:none;margin-inline:calc(var(--g)*-1);padding-inline:var(--g)}
+.trilho::-webkit-scrollbar{display:none}
+.trilho .ob{flex:0 0 clamp(250px,25vw,400px);scroll-snap-align:start;opacity:1;transform:none}
+.trilho .ob-ver{flex:none;aspect-ratio:4/5}
+.trilho .ob img{filter:none!important}
+.trilho .ob figcaption{flex-direction:column;gap:0}
+@media(max-width:760px){#obras .grade{grid-template-columns:minmax(0,1fr)!important}.grade .comp:first-child .tres{height:73cqw}.trilho .ob{flex-basis:72vw}}
+#obras .ob-cab h2,.fecho h2{font-weight:300!important}
+@media(min-width:761px){.grade .comp:first-child .tres{height:min(62cqw,86vh)}.grade .comp:first-child .tres img{object-position:50% 62%}}
+/* Comparadores sem corte: cada um na proporção da própria imagem */
+#obras .grade .comp .tres{height:auto!important;max-height:none;flex:none}
+#obras .grade .comp:nth-child(1) .tres{aspect-ratio:1600/1056}
+#obras .grade .comp:nth-child(2) .tres{aspect-ratio:1400/1270}
+#obras .grade .comp:nth-child(3) .tres{aspect-ratio:1260/945}
+#obras .grade .comp .tres img{object-position:50% 50%!important}
+@media(min-width:761px){#obras .grade{grid-template-columns:minmax(0,1.1024fr) minmax(0,1.3333fr)!important}#obras .grade .comp:nth-child(3){grid-column:auto!important}}
+@media(min-width:1001px){
+#obras .grade .comp:first-child{display:grid;grid-template-columns:minmax(0,calc(84vh*1.515)) minmax(220px,1fr);grid-template-rows:1fr auto auto;column-gap:clamp(24px,2.6vw,44px)}
+.grade .comp:first-child .tres{grid-column:1;grid-row:1/-1}
+.grade .comp:first-child>.t{grid-column:2;grid-row:1;align-self:start}
+.grade .comp:first-child .momentos{grid-column:2;grid-row:2}
+.grade .comp:first-child>a{grid-column:2;grid-row:3;justify-self:start}
+}

@@ -50,8 +50,8 @@ const filtrar = f => {
     i.hidden = !serve || (!tudo && n > LIMITE);
   });
   mais.hidden = tudo || n <= LIMITE;
-  mais.textContent = 'Ver os ' + n + ' projetos';
-  conta.textContent = mais.hidden ? n + ' projetos' : 'Mostrando ' + LIMITE + ' de ' + n + ' projetos';
+  mais.textContent = 'Ver mais projetos';
+  if (conta) conta.textContent = '';
 };
 if (mais) {
   mais.addEventListener('click', () => { tudo = true; filtrar(filtro); itens[LIMITE].querySelector('a').focus({ preventScroll: true }); });
@@ -119,7 +119,7 @@ document.querySelectorAll('.comp').forEach(comp => {
     r.value = v; pintar(v);
   });
   ['pointerup', 'pointercancel'].forEach(n => tres.addEventListener(n, () => { x0 = null; }));
-  r.value = 145; pintar(145);
+  r.value = 175; pintar(175);
 });
 
 // Planta interativa: uma aba por pavimento (sem script, aparecem todas)
@@ -142,3 +142,13 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
     if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('surge'); ob.observe(el); }
   });
 }
+
+// Fotos de obra: rolar para o lado com as setas
+document.querySelectorAll('.trilho').forEach(tr => {
+  const bs = [...tr.previousElementSibling.querySelectorAll('button')];
+  const ver = () => { bs[0].disabled = tr.scrollLeft < 4; bs[1].disabled = tr.scrollLeft + tr.clientWidth > tr.scrollWidth - 4; };
+  bs.forEach(b => b.addEventListener('click', () => tr.scrollBy({ left: b.dataset.d * tr.clientWidth * .7, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })));
+  tr.addEventListener('scroll', ver, { passive: true });
+  addEventListener('resize', ver);
+  ver();
+});
